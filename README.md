@@ -31,7 +31,15 @@ Essentially, cells in the notebook comprise the following tasks:
 Once the job is submitted, go to "Jobs" tab, click on the experiment name to follow the progress. 
 "user_logs" is another folder that has useful logs to be inspected during the training process. After the few training epochs, there will be graphs of training, evaluation loss, learning rate ect. 
 
-After the training finishes, the model can be found in "Outputs+logs" -> "outputs" folder.  
+After the training finishes, the model can be found in "Outputs+logs" -> "outputs" folder.
+
+## Interface for inference
+
+We use the configuration for training with the trained model weights and create an interface to perform inferencing using gradio.
+
+Following the template `app.py` ([source code](https://github.com/clovaai/donut/blob/master/app.py)) provided by the ClovaAI team, we have a simple interface that accepts image inputs and outputs the model's prediction of the MRZ value. We can also use the API created by gradio to perform inferencing using other applications.
+
+We combine the above with the requirements file and hosted it in Hugging Face Spaces ([link](https://huggingface.co/spaces/adbcode/donut-mrz)).
 
 ## Further exploration
 
